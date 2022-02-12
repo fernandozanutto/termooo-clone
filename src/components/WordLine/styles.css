@@ -1,0 +1,8 @@
+.word-line {
+    display: flex;
+}
+
+.word-line.ativo > * {
+    background-color: transparent;
+    border: 0.125em solid #4c4347;
+}
