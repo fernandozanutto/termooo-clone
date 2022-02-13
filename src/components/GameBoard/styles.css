@@ -1,0 +1,20 @@
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 50;
+    justify-content: center;
+    margin: 1vh 0;
+    overflow: auto;
+    user-select: none;
+    width: 100%;
+}
+
+.board {
+    display: grid;
+    flex-grow: 0;
+    gap: var(--letter-gap) 0;
+    max-height: 100%;
+    width: var(--board-width);
+}

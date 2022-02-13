@@ -22,7 +22,7 @@ export default function WordLine({active, word, onClickLetterBox, letterIndex}: 
                 <LetterBox
                     letter = {word[i-1]}
                     key={i} 
-                    active={i === letterIndex}
+                    active={!!active && i === letterIndex}
                     onClickLetterBox={onClickLetter} 
                     id={i} 
                 />

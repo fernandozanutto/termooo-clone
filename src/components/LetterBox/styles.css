@@ -1,15 +1,17 @@
 .letter-input {
-    margin: 4px;
-    width: 30px;
-    height: 30px;
-    border-radius: 10%;
-    background-color: #615458;
-    cursor: pointer;
-    box-sizing: border-box;
-    text-transform: uppercase;
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: #615458;
+  border-radius: 10%;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-size: var(--letter-font);
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 
 .letter-input.edit {
-  border-bottom-width: 0.3em !important;
+  border-bottom: 0.3em solid #4c4347 !important;
 }

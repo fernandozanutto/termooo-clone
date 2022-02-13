@@ -1,5 +1,9 @@
 .word-line {
-    display: flex;
+    display: grid;
+    gap: 0 var(--letter-gap);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    
 }
 
 .word-line.ativo > * {

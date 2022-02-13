@@ -1,0 +1,9 @@
+div#keyboard {
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 1em 1em;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(3, 33%);
+    padding: 0 3em 3em;
+    width: 100%;
+}
