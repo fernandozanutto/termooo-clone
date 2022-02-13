@@ -1,32 +1,24 @@
-import React, { useState } from 'react'
 import './styles.css'
 
 
 interface LetterBoxProps {
     id: number
-    onClick: (index: number) => void
-    onLetterUpdated: () => void
+    onClickLetterBox: (index: number) => void
     active: boolean
+    letter: string
 }
 
-export default function LetterBox(props: LetterBoxProps) {
-
-    const [letter, updateLetter] = useState('')
-
-    function onClickLetterBox() {
-        props.onClick(props.id)
-    }
-
-    function onKeyDown(event: React.KeyboardEvent<HTMLDivElement>){
-        updateLetter(event.key)
-        props.onLetterUpdated()
+export default function LetterBox({id, active, letter, onClickLetterBox}: LetterBoxProps) {
+    
+    function onClick() {
+        onClickLetterBox(id)
     }
 
     return (
         <div 
-            tabIndex={props.active ? props.id - 1 : undefined} 
-            onKeyDown={onKeyDown} onClick={onClickLetterBox} 
-            className={`letter-input ${props.active ? "edit" : ""}`}
+            tabIndex={0}
+            onClick={onClick} 
+            className={`letter-input ${active ? "edit" : ""}`}
             >{letter}</div>
     )
 }

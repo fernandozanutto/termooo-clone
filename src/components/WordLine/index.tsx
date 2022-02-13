@@ -1,45 +1,39 @@
-import { useState } from "react";
 import LetterBox from "../LetterBox";
 import './styles.css'
 
 
-interface Teste {
-    ativo?: boolean
+interface WordLineProps {
+    active?: boolean
+    word: string
+    onClickLetterBox: (index: number) => void
+    letterIndex: number
 }
 
-export default function WordLine({ativo}: Teste) {
-
-    const [activeBox, setActiveBox] = useState(1)
-
+export default function WordLine({active, word, onClickLetterBox, letterIndex}: WordLineProps) {
     function onClickLetter(index: number) {
-        setActiveBox(index)
-    }
-
-    function nextLetter() {
-        if (activeBox < 5) {
-            setActiveBox(activeBox + 1)
-        }
+        onClickLetterBox(index)
     }
 
     function generateBoxes() {
-        const boxes: JSX.Element[] = []
+        const boxes = []
 
         for (let i=1; i<=5; i++) {
             boxes.push(
                 <LetterBox
-                    onLetterUpdated = {nextLetter}
+                    letter = {word[i-1]}
                     key={i} 
-                    active={i === activeBox} 
-                    onClick={onClickLetter} 
-                    id={i} />
+                    active={i === letterIndex}
+                    onClickLetterBox={onClickLetter} 
+                    id={i} 
+                />
             )
         }
-
+        
         return boxes
     }
 
     return (
-        <div  className={`word-line ${ativo ? "ativo" : ""}`}>
+        <div className={`word-line ${active ? "ativo" : ""}`}>
             { generateBoxes() }
         </div>
     )
